@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "817386828144",
+    "project_id": "orderlist-1d82a",
+    "storage_bucket": "orderlist-1d82a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817386828144:android:d07187ab7184c81d879fb5",
+        "android_client_info": {
+          "package_name": "com.example.orderlist"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmJZm_3I8gJNj1YFPeOBfPxclEeY47uUA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
