@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">orderlist</string>
+    <string name="notification_channel_name">Завершение стирки</string>
+    <string name="notification_channel_description">Уведомления об окончании цикла стирки</string>
+</resources>

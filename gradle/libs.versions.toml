@@ -1,0 +1,94 @@
+[versions]
+# --- Версии плагинов ---
+agp = "8.5.0" # Стабильная версия AGP (требует Gradle 8.6)
+kotlin = "1.9.23" # Версия Kotlin
+ksp = "1.9.23-1.0.19" # KSP для Kotlin 1.9.23
+googleGmsGoogleServices = "4.4.2" # Плагин Google Services
+retrofit = "2.11.0"
+okhttp = "4.12.0"
+loggingInterceptor = "4.12.0"
+gson = "2.11.0"
+# --- Версии SDK ---
+compileSdk = "34"
+minSdk = "24"
+targetSdk = "34"
+
+# --- Версии библиотек ---
+coreKtx = "1.13.1" # Стабильная версия Core
+lifecycle = "2.8.3" # Стабильная версия Lifecycle
+activityCompose = "1.9.1" # Стабильная версия Activity Compose
+composeBom = "2024.05.00" # Последняя стабильная BOM на момент написания
+composeCompiler = "1.5.11" # Версия для Kotlin 1.9.23
+navigationCompose = "2.7.7" # Стабильная
+room = "2.6.1" # Стабильная
+workManager = "2.9.0" # Стабильная
+firebaseBom = "33.1.2" # Актуальная BOM
+coroutines = "1.8.1" # Актуальная
+koin = "3.5.6"
+lifecycleRuntimeComposeAndroid = "2.8.7" # Актуальная Koin
+# Версию для runtime-livedata берем из Compose BOM
+
+[libraries]
+# AndroidX Core & Lifecycle
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycle" }
+androidx-lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycle" } # Для collectAsStateWithLifecycle
+androidx-runtime-livedata = { group = "androidx.compose.runtime", name = "runtime-livedata" } # Версия из Compose BOM, для observeAsState
+retrofit-core = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+okhttp-core = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "loggingInterceptor" }
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+# Compose
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" } # Для Debug
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-material-icons-core = { group = "androidx.compose.material", name = "material-icons-core" }
+androidx-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
+
+# Navigation
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
+
+# Room
+androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" } # Для KSP
+
+# WorkManager
+androidx-work-runtime-ktx = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "workManager" }
+
+# Firebase
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth" } # Версия из BOM
+
+# Coroutines
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+
+# Koin
+koin-core = { group = "io.insert-koin", name = "koin-core", version.ref = "koin" }
+koin-android = { group = "io.insert-koin", name = "koin-android", version.ref = "koin" } # Используем общую версию Koin
+koin-compose = { group = "io.insert-koin", name = "koin-androidx-compose", version.ref = "koin" }
+androidx-lifecycle-runtime-compose-android = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose-android", version.ref = "lifecycleRuntimeComposeAndroid" } # Используем общую версию Koin
+
+# Тестовые зависимости (раскомментируйте и добавьте версии, если нужны)
+# junit = { group = "junit", name = "junit", version.ref = "junit" }
+# androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+# androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+# androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+# androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+google-devtools-ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
+# Нет необходимости объявлять compose-compiler здесь
